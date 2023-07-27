@@ -17,6 +17,6 @@ public class FizzBuzzServiceTests
     [TestMethod]
     public void ShouldEmitFizzForNumbersDivisibleByThree()
     {
-
+        Assert.AreEqual("Fizz", _fizzBuzzService.Translate(0));
     }
 }

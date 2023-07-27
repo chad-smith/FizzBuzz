@@ -1,7 +1,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NumberToStringTranslators;
 
-namespace FizzBuzz;
+namespace Tests;
 
 [TestClass]
 public class FizzTests
