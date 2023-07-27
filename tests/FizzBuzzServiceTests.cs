@@ -27,5 +27,15 @@ public class FizzBuzzServiceTests
         }
     }
 
-    
+    [TestMethod]
+
+    public void ShouldEmitBuzzForNumbersDivisibleByFive()
+    {
+        var divisibleNumbers = new[] { -5,0,5,10,15,20,25,30 };
+
+        foreach (var number in divisibleNumbers)
+        {
+            Assert.AreEqual("Buzz", _fizzBuzzService.Translate(number), $"{number} did not emit Buzz");
+        }
+    }
 }
