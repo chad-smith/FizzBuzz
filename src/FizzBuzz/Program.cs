@@ -2,7 +2,7 @@ using System;
 
 namespace FizzBuzz;
 
-public class FizzBuzzer
+public class Program
 {
     public static void Main(string[] args){
         Console.WriteLine("Fizz");

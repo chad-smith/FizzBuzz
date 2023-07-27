@@ -1,7 +1,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NumberToStringTranslators;
 
-namespace FizzBuzz;
+namespace Tests;
 
 [TestClass]
 public class BuzzTests
@@ -16,6 +16,19 @@ public class BuzzTests
         foreach (var number in divisibleNumbers)
         {
             Assert.IsTrue(buzzTranslator.CheckNumber(number));
+        }
+    }
+
+    [TestMethod]
+    public void ShouldReturnFalseForNumbersNotDivisibleByFive()
+    {
+        var buzzTranslator = new BuzzTranslator();
+
+        var divisibleNumbers = new[] { -1, 4, 9, 12, 18, 24, 29 };
+
+        foreach (var number in divisibleNumbers)
+        {
+            Assert.IsFalse(buzzTranslator.CheckNumber(number));
         }
     }
 }

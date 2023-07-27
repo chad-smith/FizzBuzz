@@ -5,6 +5,6 @@ namespace NumberToStringTranslators;
 public class BuzzTranslator : INumberToStringTranslator
 {
     public bool CheckNumber(int number) {
-        return false;
+        return number % 5 == 0;
     }
 }
