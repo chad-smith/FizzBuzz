@@ -14,7 +14,8 @@ public class FizzBuzzServiceTests
     {
         _fizzBuzzService = new FizzBuzzService(new INumberToStringTranslator[] { 
             new FizzTranslator(),
-            new BuzzTranslator()
+            new BuzzTranslator(),
+            new FizzBuzzTranslator()
         });
     }
 
@@ -22,7 +23,7 @@ public class FizzBuzzServiceTests
     public void ShouldEmitFizzForNumbersDivisibleByThree()
     {
 
-        var divisibleNumbers = new[] { -3,0,3,6,9,12,15,18,21,24,27,30 };
+        var divisibleNumbers = new[] { -3,3,6,9,12,18,21,24,27 };
 
         foreach (var number in divisibleNumbers)
         {
@@ -34,11 +35,23 @@ public class FizzBuzzServiceTests
 
     public void ShouldEmitBuzzForNumbersDivisibleByFive()
     {
-        var divisibleNumbers = new[] { -5,0,5,10,15,20,25,30 };
+        var divisibleNumbers = new[] { -5,5,10,20,25 };
 
         foreach (var number in divisibleNumbers)
         {
             Assert.AreEqual("Buzz", _fizzBuzzService.Translate(number), $"{number} did not emit Buzz");
+        }
+    }
+
+    [TestMethod]
+
+    public void ShouldEmitFizzBuzzForNumbersDivisibleByBothThreeAndFive()
+    {
+        var divisibleNumbers = new[] { -15,0,15,30 };
+
+        foreach (var number in divisibleNumbers)
+        {
+            Assert.AreEqual("FizzBuzz", _fizzBuzzService.Translate(number), $"{number} did not emit FizzBuzz");
         }
     }
 }
