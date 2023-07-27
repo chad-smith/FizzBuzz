@@ -12,4 +12,12 @@
     <ProjectReference Include="../Shared/Shared.csproj" />
   </ItemGroup>
 
+  <!-- Copy in the NumberTranslators dll for loading via reflection -->
+  <!-- Removed in favour of loading from projects bin folder directly -->
+  <!--
+    <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+      <Exec Command="xcopy $(ProjectDir)..\NumberToStringTranslators\bin\Debug\net6.0\NumberToStringTranslators.dll $(OutputPath) /Y" />
+    </Target>
+  -->
+
 </Project>
