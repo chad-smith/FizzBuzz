@@ -12,7 +12,10 @@ public class FizzBuzzServiceTests
 
     public FizzBuzzServiceTests()
     {
-        _fizzBuzzService = new FizzBuzzService(new INumberToStringTranslator[] { new FizzTranslator() });
+        _fizzBuzzService = new FizzBuzzService(new INumberToStringTranslator[] { 
+            new FizzTranslator(),
+            new BuzzTranslator()
+        });
     }
 
     [TestMethod]
