@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Linq;
 using Shared;
 
 namespace FizzBuzz;
@@ -5,11 +7,11 @@ namespace FizzBuzz;
 public class FizzBuzzService
 {
 
-    private readonly INumberToStringTranslator[] _translators;
+    private readonly IOrderedEnumerable<INumberToStringTranslator> _translators;
 
-    public FizzBuzzService(INumberToStringTranslator[] translators)
+    public FizzBuzzService(IEnumerable<INumberToStringTranslator> translators)
     {
-        _translators = translators;
+        _translators = translators.OrderByDescending( x => x.Priority);
     }
 
     public string Translate(int number)

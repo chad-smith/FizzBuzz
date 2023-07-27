@@ -3,5 +3,7 @@ namespace Shared {
         bool CheckNumber(int number);
         
         string Value { get; }
+
+        int Priority { get; }
     }
 }
